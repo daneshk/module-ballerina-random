@@ -1,5 +1,5 @@
 [package]
-org = "ballerina"
+org = "daneshk"
 name = "random"
 version = "1.7.1"
 authors = ["Ballerina"]
