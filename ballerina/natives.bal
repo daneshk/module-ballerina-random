@@ -22,24 +22,26 @@ final decimal & readonly m = <decimal>float:pow(2, 48);
 isolated decimal x0 = currentTimeInMilliSeconds();
 
 # Generates a random decimal number between 0.0 and 1.0.
+#
+# + return - The random decimal number generated
+#
 # ```ballerina
 # float randomValue = random:createDecimal();
 # ```
-#
-# + return - The random decimal number generated
 public isolated function createDecimal() returns float {
     return nextFloat();
 }
 
 # Generates a random number between the given start(inclusive) and end(exclusive) values.
 # Please note that the generated number is not cryptographically secured.
-# ```ballerina
-# int randomInteger = check random:createIntInRange(1, 100);
-# ```
 #
 # + startRange - The start range value
 # + endRange - The end range value
 # + return - The random number generated within the given range, or an error if the end range value is less than or equal to the start range value
+#
+# ```ballerina
+# int randomInteger = check random:createIntInRange(1, 100);
+# ```
 public isolated function createIntInRange(int startRange, int endRange) returns int|Error {
     if startRange >= endRange {
         return error Error("End range value must be greater than the start range value");
